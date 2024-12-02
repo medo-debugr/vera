@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>zemo</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لعبة كوتشينة</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- زر كيفية اللعب -->
+    <button id="how-to-play" class="how-to-play">كيفية اللعب</button>
+    <div id="how-to-play-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>
+                - <b>القلب الأسود:</b> لو فضل معاك كده عليك حكم.<br>
+                - <b>القلب الأحمر:</b> تطلع من اللعب.<br>
+                - <b>القلب الأزرق:</b> شوف ورق حد ضدك.<br>
+                - <b>الجوكر الأسود:</b> كل الورق اللي يخسرك فركش.
+            </p>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <button id="start-game">ابدأ اللعب</button>
+        <div class="deck">
+            <!-- سيتم عرض الأوراق هنا -->
+        </div>
+    </div>
+    <div class="bottom-list">
+        <div id="played-cards-container">
+            <button id="toggle-played-cards">فتح القائمة</button>
+            <div id="played-cards">
+                <!-- الأوراق التي تم لعبها تظهر هنا -->
+            </div>
+        </div>
+        <button id="evil-button">اكشف</button>
+        <button id="try-your-luck" style="display: none;">جرب حظك</button> <!-- زر "جرب حظك" الجديد -->
+    </div>
+    <div id="message-box" class="hidden"></div>
+    
+    <!-- صوت الإنذار (Dropbox) -->
+    <audio id="alarm-sound" src="https://www.dropbox.com/scl/fi/s1qbvfkih267bl9fi4ss2/Liar-Sound-Effect.mp3?rlkey=8fslhowtv1vyw4cju07wz0ny7&st=ks2kupv6&raw=1"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* إعدادات عامة */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://i.postimg.cc/nc0FSx6Z/gpt1732803137990.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* الحاوية الرئيسية */
+.game-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* الأزرار */
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#start-game {
+    background-color: #3498db;
+    color: white;
+}
+
+#toggle-played-cards {
+    background-color: #16a085;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+#evil-button {
+    background-image: url('https://i.postimg.cc/nzY7qLRC/Screenshot-Google.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 120px;
+    height: 60px;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+#evil-button:hover {
+    filter: brightness(0.9);
+}
+
+/* زر "جرب حظك" */
+#try-your-luck {
+    background-image: url('https://i.postimg.cc/xCvDhF8L/gpt1732988326111.png');
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    height: 70px;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px black;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s;
+    border-radius: 10px;
+}
+
+#try-your-luck:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* الأوراق */
+.deck {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    background-size: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.card.hidden {
+    visibility: hidden;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* الرسائل */
+#message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    display: none;
+    z-index: 1000;
+    text-align: center;
+}
+
+#message-box.hidden {
+    display: none;
+}
+
+/* قائمة الأوراق التي تم لعبها */
+.bottom-list {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    color: white;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#played-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#played-cards {
+    width: 100%;
+    max-height: 100px;
+    overflow-x: auto;
+    display: none;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px dashed white;
+}
+
+#played-cards.active {
+    display: block;
+}
+
+#played-cards .card {
+    width: 40px;
+    height: 60px;
+    display: inline-block;
+    margin: 2px;
+    background-size: cover;
+    border-radius: 3px;
+}
+
+/* زر كيفية اللعب */
+.how-to-play {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.how-to-play:hover {
+    background-color: #27ae60;
+}
+
+/* المربع المنبثق */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 90%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content p {
+    margin: 0;
+    line-height: 1.8;
+    color: black;
+}
+
+.modal-content .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* تأثير النقر على الورقة */
+.card.clicked {
+    animation: flip 0.5s ease forwards;
+    visibility: hidden;
+}
+
+@keyframes flip {
+    0% {
+        transform: scale(1) rotateY(0);
+    }
+    100% {
+        transform: scale(0) rotateY(180deg);
+    }
+}
